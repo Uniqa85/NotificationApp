@@ -41,8 +41,9 @@ public class MainActivity extends AppCompatActivity {
                 (this, NOTIFICATION_ID, notifyIntent, PendingIntent.FLAG_UPDATE_CURRENT);
 
         AlarmManager alarmManager = (AlarmManager) this.getSystemService(Context.ALARM_SERVICE);
-        //long interval = 24*60*60*1000; // 24 hours in milliseconds
-        long interval = 1000;
+        
+        long interval = 24*60*60*1000; // 24 hours in milliseconds
+      
         alarmManager.setExactAndAllowWhileIdle(AlarmManager.RTC_WAKEUP, System.currentTimeMillis()+interval, notifyPendingIntent);
 
     }
